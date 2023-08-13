@@ -1,0 +1,761 @@
+{
+	"info": {
+		"_postman_id": "fea0485e-4e79-4780-83d3-a4adf9069609",
+		"name": "Cake-Kart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16179237"
+	},
+	"item": [
+		{
+			"name": "Customer Management",
+			"item": [
+				{
+					"name": "customer_signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\": {\r\n        \"fname\": \"Checking Test \",\r\n        \"lname\": \"\",  \r\n         \"customer_email\":\"sikayy@gmail.co.in\",\r\n        \"customer_password\":\"sikayy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer_signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\": {\r\n        \"customer_email\": \"sass@gmail.com\",\r\n        \"customer_password\": \"sikayy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart Management",
+			"item": [
+				{
+					"name": "removeProductFromCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"product_id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/removeFromCart",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"removeFromCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAllCartItems",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "$2b$10$HubMnbMkjFormN6MYAxht.BEP7hfugSHH8ef1phKQek6R3APE8LZm:::41:::$2b$10$N6/gitZ/Oc079YFoWwPi4.6cU8Q9qfr5tTXFGfAgz4dK7NAaXyu22",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/readAllCartItems",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"readAllCartItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countProductInCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "$2b$10$HubMnbMkjFormN6MYAxht.BEP7hfugSHH8ef1phKQek6R3APE8LZm:::41:::$2b$10$N6/gitZ/Oc079YFoWwPi4.6cU8Q9qfr5tTXFGfAgz4dK7NAaXyu22",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/qty",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"qty"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProductToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "$2b$10$lkswvsu4UI5NmXriAxlnCO4BHVX1Dp/ROr6uCSAAbz6JRpxA7PK12:::10:::$2b$10$DPI8OU3JWDtySgKC7dlB6e7aRB628EpkC3MoIpUEnQQLSh61ZLkjW",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"product_id\":1,\r\n        \"qty\":3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cart/addProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cart",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin Management",
+			"item": [
+				{
+					"name": "Manage Product",
+					"item": [
+						{
+							"name": "removeProduct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "{{admin_user_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"product_id\":3\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/removeProduct",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"removeProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "editProduct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "$2b$10$ZvAB/lALN9kENdKnl3qUbeiKltSjqR.z0gwte5GvLMyus15bsq/Dq:::12:::$2b$10$GT.79kHKWAMXVxOEd9EjPeSJ6N1JsD785dQrNksaf6OxMPsSrVH3m",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\": {\r\n        \"product_id\":\"1\",\r\n        \"product_image\": \"https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI=\",\r\n        \"product_title\": \"0 Delite\",\r\n        \"product_desc\": \"Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the fin\",\r\n        \"product_currency\": \"₹\",\r\n        \"product_old_price\": \"500.00\",\r\n        \"product_new_lesser_price\": \"250.00\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/editProduct",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"editProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addProduct",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "$2b$10$ZvAB/lALN9kENdKnl3qUbeiKltSjqR.z0gwte5GvLMyus15bsq/Dq:::12:::$2b$10$GT.79kHKWAMXVxOEd9EjPeSJ6N1JsD785dQrNksaf6OxMPsSrVH3m",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\": {\r\n        \"product_image\": \"https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI=\",\r\n        \"product_title\": \"0 Delite\",\r\n        \"product_desc\": \"Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the fin\",\r\n        \"product_currency\": \"₹\",\r\n        \"product_old_price\": \"500.00\",\r\n        \"product_new_lesser_price\": \"250.00\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/addProduct",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"addProduct"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manage Users",
+					"item": [
+						{
+							"name": "getUsersByLimit",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "{{admin_user_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"lower_limit\":0,\r\n        \"number_of_row\":10\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/getUserByLimit",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"getUserByLimit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "removeUser",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "{{admin_user_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"customer_id\":\"10\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/removeUser",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"removeUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order Management -Admin",
+					"item": [
+						{
+							"name": "getOrderByLimits",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "user_id",
+										"value": "{{admin_user_id}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"inputData\": {\r\n        \"lower_limit\": 0,\r\n        \"number_of_row\":20\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/getOrderByLimits",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"getOrderByLimits"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "adminLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"customer_email\":\"sikayy@gmail.co.in\",\r\n        \"customer_password\":\"sikayy\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Management",
+			"item": [
+				{
+					"name": "giveStar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\": {\r\n        \"product_id\":\"3\",\r\n        \"number_star\":\"5\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/giveStar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"giveStar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"product_id\":\"3\",\r\n        \"rating_review_comment\":\"Kya Baat Hai\" \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/addComment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"addComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"rating_review_id\":\"1\",\r\n        \"updatedComment\":\"\"\r\n        \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/updateComment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"updateComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductByLimit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"lower_limit\":0,\r\n        \"upper_limit\":2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/getProductByLimit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"getProductByLimit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchProduct pending",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":\r\n    {\r\n        \"product_title\":\"Choco Delite\",\r\n        \"upper_limit\":5\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/searchProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"searchProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readOthersComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"product_id\":3,\r\n        \"upper_limit\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/readOthersComment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"readOthersComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readOwnComment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"product_id\":1,\r\n        \"upper_limit\":3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/readOwnComment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"readOwnComment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":{\r\n        \"product_id\":\"4\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/readAProduct",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"readAProduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "placeOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{user_id_cake}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"inputData\":[\r\n        {\r\n            \"product_id\":\"1\",\r\n            \"price_paid\":\"20\",\r\n            \"qty\":\"3\"\r\n        },\r\n        {\r\n            \"product_id\":\"1\",\r\n            \"price_paid\":\"20\",\r\n            \"qty\":\"3\"\r\n        },\r\n        {\r\n            \"product_id\":\"1\",\r\n            \"price_paid\":\"20\",\r\n            \"qty\":\"3\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order/placeOrder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"placeOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id_cake",
+			"value": "$2b$10$lkswvsu4UI5NmXriAxlnCO4BHVX1Dp/ROr6uCSAAbz6JRpxA7PK12:::10:::$2b$10$DPI8OU3JWDtySgKC7dlB6e7aRB628EpkC3MoIpUEnQQLSh61ZLkjW"
+		}
+	]
+}

@@ -1,0 +1,5 @@
+Need to check the edge cases after every query result
+
+need to check if input is empty or not
+need empty check for all inputs from payload
+In case of remove from admin or whatso ever please get it confirmed by the user from ui
